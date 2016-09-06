@@ -132,8 +132,10 @@ class UserController extends Controller
         );
     }
 
-    public function addExerciseSet($user_id, Request $resquest)
+    public function addExerciseSetAction($user_id, Request $resquest)
     {
-
+        return $this->render(
+            'FitcheckerBundle:User:addExerciseSet.html.twig'
+        );
     }
 }

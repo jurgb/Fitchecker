@@ -20,7 +20,7 @@ fitchecker_user_addExercise:
 
 fitchecker_user_addExerciseSet:
     path:     /user/{user_id}/addSet
-    defaults: { _controller: FitcheckerBundle:User:addExercise:addExerciseSet}
+    defaults: { _controller: FitcheckerBundle:User:addExerciseSet}
     requirements:
             user_id: '\d+'
 
