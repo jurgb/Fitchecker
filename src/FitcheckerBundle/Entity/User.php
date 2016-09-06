@@ -39,6 +39,10 @@ class User
      */
     private $sleeps;
     /**
+     * @ORM\OneToMany(targetEntity="FitcheckerBundle\Entity\ExerciceSet", mappedBy="users")
+     */
+    private $exercisesets;
+    /**
      * @var int
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id()
@@ -96,6 +100,53 @@ class User
         $this->sleeps = new ArrayCollection();
     }
 
+    /**
+     * @return ArrayCollection|Consumption[]
+     */
+    public function getConsumptions()
+    {
+        return $this->consumptions;
+    }
+
+    /**
+     * @param ArrayCollection|Consumption[] $consumptions
+     */
+    public function setConsumptions($consumptions)
+    {
+        $this->consumptions = $consumptions;
+    }
+
+    /**
+     * @return ArrayCollection|Sleep[]
+     */
+    public function getSleeps()
+    {
+        return $this->sleeps;
+    }
+
+    /**
+     * @param ArrayCollection|Sleep[] $sleeps
+     */
+    public function setSleeps($sleeps)
+    {
+        $this->sleeps = $sleeps;
+    }
+
+    /**
+     * @return ArrayCollection|ExerciceSet[]
+     */
+    public function getExercisesets()
+    {
+        return $this->exercisesets;
+    }
+
+    /**
+     * @param ArrayCollection|ExerciceSet[] $exercisesets
+     */
+    public function setExercisesets($exercisesets)
+    {
+        $this->exercisesets = $exercisesets;
+    }
 
     /**
      * @return mixed

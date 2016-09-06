@@ -18,12 +18,17 @@
         </div>
     </div>
     <div>
-        <h2>Exercises done:</h2>
-        <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Add new exercise</a>
+        <h2>Chosen Exercises:</h2>
+        <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Edit exercise list</a>
         {% for exc in user.exercises %}
-            <li>{{ exc.name }}</li>
+            <div>
+                {{ exc.name }}
+            </div>
         {% endfor %}
-
+    </div>
+    <div>
+        <h2>Sets executed</h2>
+        <a href="{{ path('fitchecker_user_addExerciseSet',{'user_id': user.id}) }}">New set</a>
     </div>
 
-{%  endblock %}
+{% endblock %}

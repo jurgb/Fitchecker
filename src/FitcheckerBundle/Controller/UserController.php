@@ -64,7 +64,6 @@ class UserController extends Controller
             ]
         );
     }
-
     /**
      * @param $user_id
      * @return \Symfony\Component\HttpFoundation\Response
@@ -78,8 +77,6 @@ class UserController extends Controller
 
         return $this->render('FitcheckerBundle:User:show.html.twig', ['user' => $user]);
     }
-
-
     /**
      * @param $user_id
      * @param Request $request
@@ -120,7 +117,6 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $exercise = $form['Exercise']->getData();
-            dump($exercise);
             $user->setExercises($exercise);
             //$user->addExercise($exercise);
             $em->flush();
@@ -134,5 +130,10 @@ class UserController extends Controller
                 'form' => $form->createView(),
             ]
         );
+    }
+
+    public function addExerciseSet($user_id, Request $resquest)
+    {
+
     }
 }

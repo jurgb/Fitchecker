@@ -18,6 +18,17 @@ fitchecker_user_addExercise:
     requirements:
             user_id: '\d+'
 
+fitchecker_user_addExerciseSet:
+    path:     /user/{user_id}/addSet
+    defaults: { _controller: FitcheckerBundle:User:addExercise:addExerciseSet}
+    requirements:
+            user_id: '\d+'
+
+fitchecker_exercise_index:
+    path:     /exercises
+    defaults: { _controller: FitcheckerBundle:Exercise:index}
+
 fitchecker_exercise_add:
     path:     /exercise/add
     defaults: { _controller: FitcheckerBundle:Exercise:add}
+
