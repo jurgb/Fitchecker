@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\UserRepository")
  */
 class User
 {
@@ -31,6 +32,8 @@ class User
     private $sleep;
     /**
      * @var int
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**

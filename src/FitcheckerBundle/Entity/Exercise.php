@@ -3,16 +3,16 @@
 namespace FitcheckerBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Exercise
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\ExerciseRepository")
  */
 class Exercise
 {
-
     /**
-     * @ManyToMany(targetEntity="User", mappedBy="exercises")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="exercises")
      * @var ArrayCollection|User[]
      */
     private $users;
@@ -45,6 +45,8 @@ class Exercise
 
     /**
      * @var int
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
