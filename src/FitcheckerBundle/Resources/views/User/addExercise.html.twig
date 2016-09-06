@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <a href="{{ path('fitchecker_exercise_add') }}">Add a new exercise</a>
     <h1>Add exercise</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}

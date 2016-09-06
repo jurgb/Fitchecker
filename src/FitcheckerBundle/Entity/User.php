@@ -21,51 +21,68 @@ class User
      */
     private $exercises;
     /**
-     * @ORM\ManyToMany(targetEntity="Consumption", inversedBy="users")
-     * @ORM\JoinTable(name="user_consumption")
+     * @ORM\ManyToMany(targetEntity="Consumption", mappedBy="users")
+     * @ORM\JoinTable(name="user_consumption",
+     *      joinColumns={@ORM\JoinColumn(name="consumption_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *      ))
+     * @var ArrayCollection|Consumption[]
      */
-    private $consumption;
+    private $consumptions;
     /**
-     * @ORM\ManyToMany(targetEntity="Sleep", inversedBy="users")
-     * @ORM\JoinTable(name="user_sleep")
+     * @ORM\ManyToMany(targetEntity="Sleep", mappedBy="users")
+     * @ORM\JoinTable(name="user_sleep",
+     *      joinColumns={@ORM\JoinColumn(name="sleep_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *      ))
+     * @var ArrayCollection|Sleep[]
      */
-    private $sleep;
+    private $sleeps;
     /**
      * @var int
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
      * @var string
+     * @ORM\Column(name="name", type="string", nullable=true)
      */
     private $name;
     /**
      * @var string
+     * @ORM\Column(name="firstname", type="string", nullable=true)
      */
     private $firstname;
     /**
      * @var int
+     * @ORM\Column(name="age", type="integer", nullable=true)
      */
     private $age;
     /**
      * @var string
+     * @ORM\Column(name="street", type="string", nullable=true)
      */
     private $street;
     /**
      * @var string
+     * @ORM\Column(name="street_number", type="string", nullable=true)
      */
     private $streetNumber;
     /**
      * @var string
+     * @ORM\Column(name="zipcode", type="string", nullable=true)
      */
     private $zipcode;
     /**
      * @var string
+     * @ORM\Column(name="city", type="string", nullable=true)
      */
     private $city;
     /**
      * @var string
+     * @ORM\Column(name="password", type="string", nullable=true)
      */
     private $password;
 
@@ -75,6 +92,8 @@ class User
     public function __construct()
     {
         $this->exercises = new ArrayCollection();
+        $this->consumptions = new ArrayCollection();
+        $this->sleeps = new ArrayCollection();
     }
 
 
@@ -100,7 +119,7 @@ class User
      */
     public function getConsumption()
     {
-        return $this->consumption;
+        return $this->consumptions;
     }
 
     /**
@@ -108,7 +127,7 @@ class User
      */
     public function setConsumption($consumption)
     {
-        $this->consumption = $consumption;
+        $this->consumptions = $consumption;
     }
 
     /**
@@ -116,7 +135,7 @@ class User
      */
     public function getSleep()
     {
-        return $this->sleep;
+        return $this->sleeps;
     }
 
     /**
@@ -124,7 +143,7 @@ class User
      */
     public function setSleep($sleep)
     {
-        $this->sleep = $sleep;
+        $this->sleeps = $sleep;
     }
 
     /**
@@ -327,5 +346,63 @@ class User
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * Remove exercise
+     *
+     * @param \FitcheckerBundle\Entity\Exercise $exercise
+     */
+    public function removeExercise(\FitcheckerBundle\Entity\Exercise $exercise)
+    {
+        $this->exercises->removeElement($exercise);
+    }
+
+    /**
+     * Add consumption
+     *
+     * @param \FitcheckerBundle\Entity\Consumption $consumption
+     *
+     * @return User
+     */
+    public function addConsumption(\FitcheckerBundle\Entity\Consumption $consumption)
+    {
+        $this->consumption[] = $consumption;
+
+        return $this;
+    }
+
+    /**
+     * Remove consumption
+     *
+     * @param \FitcheckerBundle\Entity\Consumption $consumption
+     */
+    public function removeConsumption(\FitcheckerBundle\Entity\Consumption $consumption)
+    {
+        $this->consumption->removeElement($consumption);
+    }
+
+    /**
+     * Add sleep
+     *
+     * @param \FitcheckerBundle\Entity\Sleep $sleep
+     *
+     * @return User
+     */
+    public function addSleep(\FitcheckerBundle\Entity\Sleep $sleep)
+    {
+        $this->sleep[] = $sleep;
+
+        return $this;
+    }
+
+    /**
+     * Remove sleep
+     *
+     * @param \FitcheckerBundle\Entity\Sleep $sleep
+     */
+    public function removeSleep(\FitcheckerBundle\Entity\Sleep $sleep)
+    {
+        $this->sleep->removeElement($sleep);
     }
 }

@@ -2,14 +2,82 @@
 
 namespace FitcheckerBundle\Entity;
 
-use Doctrine\ORM\Mapping\JoinTable;
-use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\UserRepository")
  */
 class User
 {
+    /**
+     * @ORM\ManyToMany(targetEntity="Exercise", inversedBy="users")
+     * @ORM\JoinTable(name="user_exercise",
+     *      joinColumns={@ORM\JoinColumn(name="exercise_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *      ))
+     * @var ArrayCollection|Exercise[]
+     */
+    private $exercises;
+    /**
+     * @ORM\ManyToMany(targetEntity="Consumption", inversedBy="users")
+     * @ORM\JoinTable(name="user_consumption")
+     */
+    private $consumption;
+    /**
+     * @ORM\ManyToMany(targetEntity="Sleep", inversedBy="users")
+     * @ORM\JoinTable(name="user_sleep")
+     */
+    private $sleep;
+    /**
+     * @var int
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    /**
+     * @var string
+     */
+    private $name;
+    /**
+     * @var string
+     */
+    private $firstname;
+    /**
+     * @var int
+     */
+    private $age;
+    /**
+     * @var string
+     */
+    private $street;
+    /**
+     * @var string
+     */
+    private $streetNumber;
+    /**
+     * @var string
+     */
+    private $zipcode;
+    /**
+     * @var string
+     */
+    private $city;
+    /**
+     * @var string
+     */
+    private $password;
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->exercises = new ArrayCollection();
+    }
+
+
     /**
      * @return mixed
      */
@@ -19,11 +87,12 @@ class User
     }
 
     /**
-     * @param mixed $exercise
+     * @param Exercise $exercise
      */
-    public function setExercises($exercise)
+    public function addExercise(Exercise $exercise)
     {
-        $this->exercises->add = $exercise;
+        dump($this->exercises);
+        $this->exercises->add($exercise);
     }
 
     /**
@@ -57,69 +126,6 @@ class User
     {
         $this->sleep = $sleep;
     }
-    /**
-     * @ManyToMany(targetEntity="Exercise", inversedBy="users")
-     * @JoinTable(name="users_exercises")
-     */
-    private $exercises;
-
-    /**
-     * @ManyToMany(targetEntity="Consumption", inversedBy="users")
-     * @JoinTable(name="users_consumptions")
-     */
-    private $consumption;
-
-    /**
-     * @ManyToMany(targetEntity="Sleep", inversedBy="users")
-     * @JoinTable(name="users_sleeps")
-     */
-    private $sleep;
-
-    /**
-     * @var int
-     */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $firstname;
-
-    /**
-     * @var int
-     */
-    private $age;
-
-    /**
-     * @var string
-     */
-    private $street;
-
-    /**
-     * @var string
-     */
-    private $streetNumber;
-
-    /**
-     * @var string
-     */
-    private $zipcode;
-
-    /**
-     * @var string
-     */
-    private $city;
-
-    /**
-     * @var string
-     */
-    private $password;
-
 
     /**
      * Get id
@@ -129,6 +135,16 @@ class User
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -146,13 +162,13 @@ class User
     }
 
     /**
-     * Get name
+     * Get firstname
      *
      * @return string
      */
-    public function getName()
+    public function getFirstname()
     {
-        return $this->name;
+        return $this->firstname;
     }
 
     /**
@@ -170,13 +186,13 @@ class User
     }
 
     /**
-     * Get firstname
+     * Get age
      *
-     * @return string
+     * @return int
      */
-    public function getFirstname()
+    public function getAge()
     {
-        return $this->firstname;
+        return $this->age;
     }
 
     /**
@@ -194,13 +210,13 @@ class User
     }
 
     /**
-     * Get age
+     * Get street
      *
-     * @return int
+     * @return string
      */
-    public function getAge()
+    public function getStreet()
     {
-        return $this->age;
+        return $this->street;
     }
 
     /**
@@ -218,13 +234,13 @@ class User
     }
 
     /**
-     * Get street
+     * Get streetNumber
      *
      * @return string
      */
-    public function getStreet()
+    public function getStreetNumber()
     {
-        return $this->street;
+        return $this->streetNumber;
     }
 
     /**
@@ -242,13 +258,13 @@ class User
     }
 
     /**
-     * Get streetNumber
+     * Get zipcode
      *
      * @return string
      */
-    public function getStreetNumber()
+    public function getZipcode()
     {
-        return $this->streetNumber;
+        return $this->zipcode;
     }
 
     /**
@@ -266,13 +282,13 @@ class User
     }
 
     /**
-     * Get zipcode
+     * Get city
      *
      * @return string
      */
-    public function getZipcode()
+    public function getCity()
     {
-        return $this->zipcode;
+        return $this->city;
     }
 
     /**
@@ -290,13 +306,13 @@ class User
     }
 
     /**
-     * Get city
+     * Get password
      *
      * @return string
      */
-    public function getCity()
+    public function getPassword()
     {
-        return $this->city;
+        return $this->password;
     }
 
     /**
@@ -311,15 +327,5 @@ class User
         $this->password = $password;
 
         return $this;
-    }
-
-    /**
-     * Get password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 }

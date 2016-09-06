@@ -2,18 +2,34 @@
 
 namespace FitcheckerBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Sleep
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\SleepRepository")
  */
 class Sleep
 {
     /**
-     * @ManyToMany(targetEntity="User", mappedBy="sleeps")
+     * @ORM\ManyToMany(targetEntity="User", inversedBy="sleeps")
+     * @var ArrayCollection|User[]
      */
     private $users;
 
     /**
+     * Sleep constructor.
+     */
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+    /**
      * @var int
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 

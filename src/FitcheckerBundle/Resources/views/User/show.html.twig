@@ -20,7 +20,9 @@
     <div>
         <h2>Exercises done:</h2>
         <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Add new exercise</a>
-        {{  dump(user) }}
+        {% for exc in user.exercises %}
+            <li>{{ exc.name }}</li>
+        {% endfor %}
 
     </div>
 

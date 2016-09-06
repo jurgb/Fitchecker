@@ -2,18 +2,34 @@
 
 namespace FitcheckerBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Consumption
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\ConsumptionRepository")
  */
 class Consumption
 {
     /**
-     * @ManyToMany(targetEntity="User", mappedBy="consumptions")
+     * @ORM\ManyToMany(targetEntity="User", inversedBy="consumptions")
+     * @var ArrayCollection|User[]
      */
     private $users;
 
     /**
+     * Consumption constructor.
+     */
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+    /**
      * @var int
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 

@@ -120,13 +120,10 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $exercise = $form['Exercise']->getData();
-            dump($exercise);
             $user->addExercise($exercise);
-
             $em->flush();
-            dump($user);
 
-            //return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);
+            return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);
         }
 
         return $this->render(

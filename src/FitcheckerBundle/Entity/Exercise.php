@@ -45,6 +45,7 @@ class Exercise
 
     /**
      * @var int
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -52,6 +53,7 @@ class Exercise
 
     /**
      * @var string
+     * @ORM\Column(name="name", type="string", nullable=true)
      */
     private $name;
 
@@ -88,5 +90,15 @@ class Exercise
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \FitcheckerBundle\Entity\User $user
+     */
+    public function removeUser(\FitcheckerBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
     }
 }

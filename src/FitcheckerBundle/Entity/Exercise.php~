@@ -2,18 +2,28 @@
 
 namespace FitcheckerBundle\Entity;
 
-use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Exercise
+ * @ORM\Entity(repositoryClass="FitcheckerBundle\Repository\ExerciseRepository")
  */
 class Exercise
 {
-
     /**
-     * @ManyToMany(targetEntity="User", mappedBy="exercises")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="exercises")
+     * @var ArrayCollection|User[]
      */
     private $users;
+
+    /**
+     * Exercise constructor.
+     */
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -23,16 +33,20 @@ class Exercise
         return $this->users;
     }
 
+
     /**
-     * @param mixed $users
+     * @param User $user
      */
-    public function setUsers($users)
+    public function addUser(User $user)
     {
-        $this->users = $users;
+        $this->users->add($user);
     }
+
 
     /**
      * @var int
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
