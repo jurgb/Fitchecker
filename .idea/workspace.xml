@@ -24,15 +24,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1545">
-              <caret line="103" column="27" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="27" />
+            <state relative-caret-position="459">
+              <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
               <folding>
                 <element signature="e#47#91#0#PHP" expanded="true" />
                 <element signature="e#3202#3229#1#PHP" expanded="true" />
-                <marker date="1473169355000" expanded="true" signature="3091:3321" ph="..." />
+                <marker date="1473170729000" expanded="true" signature="3091:3321" ph="..." />
               </folding>
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="Exercise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
+            <state relative-caret-position="795">
               <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
+            <state relative-caret-position="465">
+              <caret line="114" column="5" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
@@ -139,9 +139,9 @@
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Sleep.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExercise.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
       </list>
     </option>
   </component>
@@ -523,12 +523,12 @@
       <workItem from="1473095628524" duration="121000" />
       <workItem from="1473144773563" duration="7408000" />
       <workItem from="1473152477351" duration="2264000" />
-      <workItem from="1473157384046" duration="11360000" />
+      <workItem from="1473157384046" duration="11819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36359000" />
+    <option name="totallyTimeSpent" value="36818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="828" extended-state="6" />
@@ -634,7 +634,7 @@
           <folding>
             <element signature="e#47#91#0#PHP" expanded="true" />
             <element signature="e#3202#3229#1#PHP" expanded="true" />
-            <marker date="1473169355000" expanded="true" signature="3091:3321" ph="..." />
+            <marker date="1473170729000" expanded="true" signature="3091:3321" ph="..." />
           </folding>
         </state>
       </provider>
@@ -938,8 +938,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="795">
           <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+          <folding>
+            <element signature="e#43#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="114" column="5" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
           <folding>
             <element signature="e#43#91#0#PHP" expanded="true" />
           </folding>
@@ -948,22 +958,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="103" column="27" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="27" />
+        <state relative-caret-position="459">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
           <folding>
             <element signature="e#47#91#0#PHP" expanded="true" />
             <element signature="e#3202#3229#1#PHP" expanded="true" />
-            <marker date="1473169355000" expanded="true" signature="3091:3321" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
-          <folding>
-            <element signature="e#43#91#0#PHP" expanded="true" />
+            <marker date="1473170729000" expanded="true" signature="3091:3321" ph="..." />
           </folding>
         </state>
       </provider>

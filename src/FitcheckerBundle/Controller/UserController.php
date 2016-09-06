@@ -109,7 +109,7 @@ class UserController extends Controller
                 'choice_label' => 'name',
 
                 // used to render a select box, check boxes or radios
-                //'multiple' => true,
+                'multiple' => true,
                 'expanded' => true,
             ]
             )
@@ -120,7 +120,9 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $exercise = $form['Exercise']->getData();
-            $user->addExercise($exercise);
+            dump($exercise);
+            $user->setExercises($exercise);
+            //$user->addExercise($exercise);
             $em->flush();
 
             return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);

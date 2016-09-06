@@ -105,9 +105,13 @@ class User
         return $this->exercises;
     }
 
-    public function setExercises()
-    {
 
+    /**
+     * @param ArrayCollection $selectedExercises
+     */
+    public function setExercises(ArrayCollection $selectedExercises)
+    {
+        $this->exercises = $selectedExercises;
     }
 
     /**
