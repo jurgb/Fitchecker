@@ -105,12 +105,16 @@ class User
         return $this->exercises;
     }
 
+    public function setExercises()
+    {
+
+    }
+
     /**
      * @param Exercise $exercise
      */
     public function addExercise(Exercise $exercise)
     {
-        dump($this->exercises);
         $this->exercises->add($exercise);
     }
 
@@ -353,7 +357,7 @@ class User
      *
      * @param \FitcheckerBundle\Entity\Exercise $exercise
      */
-    public function removeExercise(\FitcheckerBundle\Entity\Exercise $exercise)
+    public function removeExercise(Exercise $exercise)
     {
         $this->exercises->removeElement($exercise);
     }
@@ -365,9 +369,9 @@ class User
      *
      * @return User
      */
-    public function addConsumption(\FitcheckerBundle\Entity\Consumption $consumption)
+    public function addConsumption(Consumption $consumption)
     {
-        $this->consumption[] = $consumption;
+        $this->consumptions[] = $consumption;
 
         return $this;
     }
@@ -377,9 +381,9 @@ class User
      *
      * @param \FitcheckerBundle\Entity\Consumption $consumption
      */
-    public function removeConsumption(\FitcheckerBundle\Entity\Consumption $consumption)
+    public function removeConsumption(Consumption $consumption)
     {
-        $this->consumption->removeElement($consumption);
+        $this->consumptions->removeElement($consumption);
     }
 
     /**
@@ -389,9 +393,9 @@ class User
      *
      * @return User
      */
-    public function addSleep(\FitcheckerBundle\Entity\Sleep $sleep)
+    public function addSleep(Sleep $sleep)
     {
-        $this->sleep[] = $sleep;
+        $this->sleeps[] = $sleep;
 
         return $this;
     }
@@ -401,8 +405,8 @@ class User
      *
      * @param \FitcheckerBundle\Entity\Sleep $sleep
      */
-    public function removeSleep(\FitcheckerBundle\Entity\Sleep $sleep)
+    public function removeSleep(Sleep $sleep)
     {
-        $this->sleep->removeElement($sleep);
+        $this->sleeps->removeElement($sleep);
     }
 }
