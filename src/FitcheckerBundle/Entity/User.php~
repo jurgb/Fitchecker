@@ -1,0 +1,325 @@
+<?php
+
+namespace FitcheckerBundle\Entity;
+
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
+
+/**
+ * User
+ */
+class User
+{
+    /**
+     * @return mixed
+     */
+    public function getExercises()
+    {
+        return $this->exercises;
+    }
+
+    /**
+     * @param mixed $exercise
+     */
+    public function setExercises($exercise)
+    {
+        $this->exercises->add = $exercise;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConsumption()
+    {
+        return $this->consumption;
+    }
+
+    /**
+     * @param mixed $consumption
+     */
+    public function setConsumption($consumption)
+    {
+        $this->consumption = $consumption;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSleep()
+    {
+        return $this->sleep;
+    }
+
+    /**
+     * @param mixed $sleep
+     */
+    public function setSleep($sleep)
+    {
+        $this->sleep = $sleep;
+    }
+    /**
+     * @ManyToMany(targetEntity="Exercise", inversedBy="users")
+     * @JoinTable(name="users_exercises")
+     */
+    private $exercises;
+
+    /**
+     * @ManyToMany(targetEntity="Consumption", inversedBy="users")
+     * @JoinTable(name="users_consumptions")
+     */
+    private $consumption;
+
+    /**
+     * @ManyToMany(targetEntity="Sleep", inversedBy="users")
+     * @JoinTable(name="users_sleeps")
+     */
+    private $sleep;
+
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $firstname;
+
+    /**
+     * @var int
+     */
+    private $age;
+
+    /**
+     * @var string
+     */
+    private $street;
+
+    /**
+     * @var string
+     */
+    private $streetNumber;
+
+    /**
+     * @var string
+     */
+    private $zipcode;
+
+    /**
+     * @var string
+     */
+    private $city;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     *
+     * @return User
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set street
+     *
+     * @param string $street
+     *
+     * @return User
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+
+    /**
+     * Get street
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set streetNumber
+     *
+     * @param string $streetNumber
+     *
+     * @return User
+     */
+    public function setStreetNumber($streetNumber)
+    {
+        $this->streetNumber = $streetNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get streetNumber
+     *
+     * @return string
+     */
+    public function getStreetNumber()
+    {
+        return $this->streetNumber;
+    }
+
+    /**
+     * Set zipcode
+     *
+     * @param string $zipcode
+     *
+     * @return User
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get zipcode
+     *
+     * @return string
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     *
+     * @return User
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+}

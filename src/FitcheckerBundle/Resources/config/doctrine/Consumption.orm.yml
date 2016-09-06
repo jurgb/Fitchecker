@@ -1,0 +1,21 @@
+FitcheckerBundle\Entity\Consumption:
+    type: entity
+    table: null
+    repositoryClass: FitcheckerBundle\Repository\ConsumptionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+            column: Type
+        name:
+            type: string
+            length: 255
+            nullable: true
+            column: Name
+    lifecycleCallbacks: {  }

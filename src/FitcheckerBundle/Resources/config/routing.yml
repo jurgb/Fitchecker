@@ -1,0 +1,23 @@
+fitchecker_homepage:
+    path:     /
+    defaults: { _controller: FitcheckerBundle:Default:index }
+
+fitchecker_user_signup:
+    path:     /user/new
+    defaults: {_controller: FitcheckerBundle:User:signup}
+
+fitchecker_user_show:
+    path:     /user/show/{user_id}
+    defaults: { _controller: FitcheckerBundle:User:show}
+    requirements:
+            user_id: '\d+'
+
+fitchecker_user_addExercise:
+    path:     /user/{user_id}/addExercise
+    defaults: { _controller: FitcheckerBundle:User:addExercise}
+    requirements:
+            user_id: '\d+'
+
+fitchecker_exercise_add:
+    path:     /exercise/add
+    defaults: { _controller: FitcheckerBundle:Exercise:add}

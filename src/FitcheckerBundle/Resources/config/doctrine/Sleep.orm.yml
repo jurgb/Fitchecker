@@ -1,0 +1,15 @@
+FitcheckerBundle\Entity\Sleep:
+    type: entity
+    table: null
+    repositoryClass: FitcheckerBundle\Repository\SleepRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        hours:
+            type: integer
+            column: Hours
+    lifecycleCallbacks: {  }

@@ -1,0 +1,78 @@
+<?php
+
+namespace FitcheckerBundle\Entity;
+
+use Doctrine\ORM\Mapping\ManyToMany;
+
+/**
+ * Exercise
+ */
+class Exercise
+{
+
+    /**
+     * @ManyToMany(targetEntity="User", mappedBy="exercises")
+     */
+    private $users;
+
+    /**
+     * @return mixed
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param mixed $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Exercise
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+}

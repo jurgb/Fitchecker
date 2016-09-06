@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>User profile</h1>
+    <div>
+        <div>
+            Lastname: {{ user.name }}
+        </div>
+        <div>
+            Firstname: {{ user.firstname }}
+        </div>
+        <div>
+            Age: {{ user.age }}
+        </div>
+        <div>
+            Adress: {{ user.street }} {{ user.streetNumber }} {{ user.zipcode }} {{ user.city }}
+        </div>
+    </div>
+    <div>
+        <h2>Exercises done:</h2>
+        <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Add new exercise</a>
+        {{  dump(user) }}
+
+    </div>
+
+{%  endblock %}
