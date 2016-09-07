@@ -4,6 +4,7 @@ namespace FitcheckerBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Exercise
@@ -18,11 +19,17 @@ class Exercise
     private $users;
 
     /**
+     * @ORM\OneToMany(targetEntity="FitcheckerBundle\Entity\ExerciceSet", mappedBy="exercise")
+     * @var ArrayCollection|ExerciceSet[]
+     */
+    private $exercisesets;
+    /**
      * Exercise constructor.
      */
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->exercisesets = new ArrayCollection();
     }
 
     /**
@@ -54,6 +61,10 @@ class Exercise
     /**
      * @var string
      * @ORM\Column(name="name", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid name."
+     * )
      */
     private $name;
 
@@ -97,7 +108,7 @@ class Exercise
      *
      * @param \FitcheckerBundle\Entity\User $user
      */
-    public function removeUser(\FitcheckerBundle\Entity\User $user)
+    public function removeUser(User $user)
     {
         $this->users->removeElement($user);
     }

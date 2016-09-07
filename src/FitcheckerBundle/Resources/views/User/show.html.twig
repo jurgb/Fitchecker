@@ -18,8 +18,8 @@
         </div>
     </div>
     <div>
-        <h2>Chosen Exercises:</h2>
-        <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Edit exercise list</a>
+        <h2>Favorite Exercises:</h2>
+        <a href="{{ path('fitchecker_user_addExercise',{'user_id': user.id}) }}">Edit favorite exercises list</a>
         {% for exc in user.exercises %}
             <div>
                 {{ exc.name }}
@@ -29,6 +29,16 @@
     <div>
         <h2>Sets executed</h2>
         <a href="{{ path('fitchecker_user_addExerciseSet',{'user_id': user.id}) }}">New set</a>
+        {% for excset in user.exercisesets %}
+            <div>
+                {{ excset.reps}} reps of
+                {{ excset.getExercise().name }}
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Consumptions</h2>
+
     </div>
 
 {% endblock %}

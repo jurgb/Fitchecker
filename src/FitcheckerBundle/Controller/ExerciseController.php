@@ -2,11 +2,11 @@
 
 namespace FitcheckerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FitcheckerBundle\Entity\Exercise;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ExerciseController
@@ -19,8 +19,13 @@ class ExerciseController extends Controller
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('FitcheckerBundle:Exercise');
+        $exercises = $repository->findAll();
+
         return $this->render(
-            'FitcheckerBundle:Exercise:index.html.twig'
+            'FitcheckerBundle:Exercise:index.html.twig',
+            ['exercises' => $exercises]
         );
     }
 

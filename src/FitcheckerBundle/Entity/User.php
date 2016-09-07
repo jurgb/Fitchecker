@@ -4,6 +4,7 @@ namespace FitcheckerBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -21,12 +22,7 @@ class User
      */
     private $exercises;
     /**
-     * @ORM\ManyToMany(targetEntity="Consumption", mappedBy="users")
-     * @ORM\JoinTable(name="user_consumption",
-     *      joinColumns={@ORM\JoinColumn(name="consumption_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
-     *      ))
-     * @var ArrayCollection|Consumption[]
+     * @ORM\OneToMany(targetEntity="Consumption", mappedBy="user")
      */
     private $consumptions;
     /**
@@ -39,7 +35,8 @@ class User
      */
     private $sleeps;
     /**
-     * @ORM\OneToMany(targetEntity="FitcheckerBundle\Entity\ExerciceSet", mappedBy="users")
+     * @ORM\OneToMany(targetEntity="FitcheckerBundle\Entity\ExerciceSet", mappedBy="user")
+     * @var ArrayCollection|ExerciceSet[]
      */
     private $exercisesets;
     /**
@@ -51,42 +48,85 @@ class User
     private $id;
     /**
      * @var string
+     * @ORM\Column(name="email", type="string", nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
+     */
+    private $email;
+    /**
+     * @var string
      * @ORM\Column(name="name", type="string", nullable=true)
+     * @Assert\NotBlank()
      */
     private $name;
     /**
      * @var string
      * @ORM\Column(name="firstname", type="string", nullable=true)
+     * @Assert\NotBlank()
      */
     private $firstname;
     /**
      * @var int
      * @ORM\Column(name="age", type="integer", nullable=true)
+     * @Assert\NotBlank()
+     * * @Assert\Type(
+     *     type="integer",
+     *     message="The value {{ value }} is not a valid age."
+     * )
+     * @Assert\Range(
+     *      min = 16,
+     *      max = 120,
+     *      minMessage = "You must be at least {{ limit }} years old to gain acces to this application",
+     *      maxMessage = "You cannot be older than {{ limit }}"
+     * )
      */
     private $age;
     /**
      * @var string
      * @ORM\Column(name="street", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid street."
+     * )
      */
     private $street;
     /**
      * @var string
      * @ORM\Column(name="street_number", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="numeric",
+     *     message="The value {{ value }} is not a valid streetnumber."
+     * )
      */
     private $streetNumber;
     /**
      * @var string
      * @ORM\Column(name="zipcode", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="numeric",
+     *     message="The value {{ value }} is not a valid zipcode."
+     * )
      */
     private $zipcode;
     /**
      * @var string
      * @ORM\Column(name="city", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid city."
+     * )
      */
     private $city;
     /**
      * @var string
      * @ORM\Column(name="password", type="string", nullable=true)
+     * @Assert\Type(
+     *     type="string",
+     *     message="The value {{ value }} is not a valid password."
+     * )
      */
     private $password;
 
@@ -98,6 +138,23 @@ class User
         $this->exercises = new ArrayCollection();
         $this->consumptions = new ArrayCollection();
         $this->sleeps = new ArrayCollection();
+        $this->exercisesets = new ArrayCollection();
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     /**

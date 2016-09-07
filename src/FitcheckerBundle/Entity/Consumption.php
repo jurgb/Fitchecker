@@ -2,7 +2,6 @@
 
 namespace FitcheckerBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,19 +11,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Consumption
 {
     /**
-     * @ORM\ManyToMany(targetEntity="User", inversedBy="consumptions")
-     * @var ArrayCollection|User[]
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="consumptions")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private $users;
-
-    /**
-     * Consumption constructor.
-     */
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
-
+    private $user;
     /**
      * @var int
      * @ORM\Column(name="id", type="integer", nullable=false)
@@ -32,17 +22,30 @@ class Consumption
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      */
     private $type;
-
     /**
      * @var string
      */
     private $name;
 
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * Get id
@@ -52,6 +55,16 @@ class Consumption
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 
     /**
@@ -69,13 +82,13 @@ class Consumption
     }
 
     /**
-     * Get type
+     * Get name
      *
      * @return string
      */
-    public function getType()
+    public function getName()
     {
-        return $this->type;
+        return $this->name;
     }
 
     /**
@@ -90,15 +103,5 @@ class Consumption
         $this->name = $name;
 
         return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
     }
 }

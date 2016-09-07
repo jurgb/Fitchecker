@@ -2,5 +2,10 @@
 
 {% block body %}
     <h1>All availaible exercises</h1>
-    (list nog adden)
+    <a href="{{ path('fitchecker_exercise_add') }}">Add a new exercise</a>
+    {% for exc in exercises %}
+        <div>
+            {{ exc.name }}
+        </div>
+    {% endfor %}
 {%  endblock %}
