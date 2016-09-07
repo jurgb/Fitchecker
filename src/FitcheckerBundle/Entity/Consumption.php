@@ -24,10 +24,12 @@ class Consumption
     private $id;
     /**
      * @var string
+     * @ORM\Column(name="type", type="string", nullable=true)
      */
     private $type;
     /**
      * @var string
+     * @ORM\Column(name="name", type="string", nullable=true)
      */
     private $name;
 

@@ -5,72 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73b5495e-bef9-4799-abef-aea2295cc2a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sqlite.db" afterPath="$PROJECT_DIR$/app/sqlite.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/.gitkeep" afterPath="$PROJECT_DIR$/var/cache/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/.gitkeep" afterPath="$PROJECT_DIR$/var/logs/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" afterPath="$PROJECT_DIR$/var/sessions/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/apple-touch-icon.png" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/fitchecker.iml" afterPath="$PROJECT_DIR$/.idea/fitchecker.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.htaccess" afterPath="$PROJECT_DIR$/app/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppCache.php" afterPath="$PROJECT_DIR$/app/AppCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160906151012.php" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20160906151012.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/autoload.php" afterPath="$PROJECT_DIR$/app/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_prod.yml" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_test.yml" afterPath="$PROJECT_DIR$/app/config/config_test.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing_dev.yml" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpunit.xml.dist" afterPath="$PROJECT_DIR$/phpunit.xml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/.htaccess" afterPath="$PROJECT_DIR$/src/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ExerciseController.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ExerciseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Equipment.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Equipment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/ExerciceSet.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/ExerciceSet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Sleep.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Sleep.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/FitcheckerBundle.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/FitcheckerBundle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ConsumptionRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ConsumptionRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/EquipmentRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/EquipmentRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciceSetRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciceSetRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciseRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciseRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/SleepRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/SleepRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Repository/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Exercise/add.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Exercise/add.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Exercise/index.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Exercise/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExercise.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExercise.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExerciseSet.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExerciseSet.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addSet.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addSet.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/signup.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/signup.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/form/exercises.html.twig" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/form/exercises.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/FitcheckerBundle/Controller/DefaultControllerTest.php" afterPath="$PROJECT_DIR$/tests/FitcheckerBundle/Controller/DefaultControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/.htaccess" afterPath="$PROJECT_DIR$/web/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.php" afterPath="$PROJECT_DIR$/web/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/robots.txt" afterPath="$PROJECT_DIR$/web/robots.txt" />
     </list>
     <ignored path="fitchecker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,8 +43,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
+            <state relative-caret-position="-1185">
+              <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
@@ -120,8 +55,8 @@
       <file leaf-file-name="Exercise.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="225">
+              <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="61" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
@@ -132,8 +67,8 @@
       <file leaf-file-name="Consumption.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+            <state relative-caret-position="435">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -196,8 +131,8 @@
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ConsumptionController.php" />
-        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" />
       </list>
     </option>
   </component>
@@ -634,12 +569,12 @@
       <workItem from="1473185548685" duration="10000" />
       <workItem from="1473185794558" duration="7000" />
       <workItem from="1473185927032" duration="48000" />
-      <workItem from="1473230111506" duration="7726000" />
+      <workItem from="1473230111506" duration="7968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51593000" />
+    <option name="totallyTimeSpent" value="51835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,18 +912,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/ConsumptionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="61" />
+          <folding>
+            <element signature="e#43#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1185">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding>
             <element signature="e#43#91#0#PHP" expanded="true" />
           </folding>
@@ -1007,28 +952,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
-          <folding>
-            <element signature="e#43#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/ConsumptionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="564">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        <state relative-caret-position="435">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
