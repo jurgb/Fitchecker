@@ -4,6 +4,8 @@ namespace FitcheckerBundle\Controller;
 
 use FitcheckerBundle\Entity\Exercise;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,6 +42,15 @@ class ExerciseController extends Controller
 
         $form = $this->createFormBuilder($exercise)
             ->add('name', TextType::class)
+            ->add('equipment', CollectionType::class, [
+                // each entry in the array will be an "email" field
+                'entry_type'   => EmailType::class,
+                // these options are passed to each "email" type
+                'entry_options'  => [
+                    'attr'      => ['class' => 'email-box']
+                ]
+            ]
+            )
             ->add('save', SubmitType::class, ['label' => 'Add exercise'])
             ->getForm();
 
