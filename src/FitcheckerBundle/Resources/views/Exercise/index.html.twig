@@ -6,6 +6,14 @@
     {% for exc in exercises %}
         <div>
             {{ exc.name }}
+            <div>
+                For this exercise you might need:
+                <ul>
+                    {% for equipment in exc.getEquipments() %}
+                        <li>{{ equipment.name }} (near: {{ equipment.location }})</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     {% endfor %}
 {%  endblock %}
