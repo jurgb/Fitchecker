@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73b5495e-bef9-4799-abef-aea2295cc2a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addConsumption.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" />
     </list>
     <ignored path="fitchecker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,13 +32,38 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+            <state relative-caret-position="564">
+              <caret line="191" column="38" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
               <folding>
                 <element signature="e#47#87#0#PHP" expanded="true" />
+                <element signature="e#884#2368#0#PHP" expanded="false" />
+                <element signature="e#2471#2820#0#PHP" expanded="false" />
+                <element signature="e#2954#4698#0#PHP" expanded="false" />
+                <element signature="e#3293#3320#1#PHP" expanded="true" />
+                <element signature="e#5117#5140#1#PHP" expanded="true" />
                 <element signature="e#6146#6194#0#PHP" expanded="true" />
-                <marker date="1473234980000" expanded="true" signature="3182:3412" ph="..." />
+                <marker date="1473239407000" expanded="true" signature="3182:3412" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addConsumption.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addConsumption.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consumption.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Consumption.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state relative-caret-position="-690">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -119,20 +147,21 @@
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Set/add.html.twig.html" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addSet.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ExerciseSetController.php" />
-        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExerciseSet.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciseRepository.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Repository/ExerciceSetRepository.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ExerciseController.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/Exercise/index.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/ExerciceSet.php" />
-        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/signup.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Exercise.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/ConsumptionController.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php" />
+        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addConsumption.html.twig" />
       </list>
     </option>
   </component>
@@ -569,12 +598,12 @@
       <workItem from="1473185548685" duration="10000" />
       <workItem from="1473185794558" duration="7000" />
       <workItem from="1473185927032" duration="48000" />
-      <workItem from="1473230111506" duration="7968000" />
+      <workItem from="1473230111506" duration="8160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51835000" />
+    <option name="totallyTimeSpent" value="52027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,13 +676,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -819,14 +841,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addExerciseSet.html.twigSet" />
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addSet.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -940,18 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
-          <folding>
-            <element signature="e#47#87#0#PHP" expanded="true" />
-            <element signature="e#6146#6194#0#PHP" expanded="true" />
-            <marker date="1473234980000" expanded="true" signature="3182:3412" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -962,8 +964,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Entity/Consumption.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="-690">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="191" column="38" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+          <folding>
+            <element signature="e#47#87#0#PHP" expanded="true" />
+            <element signature="e#884#2368#0#PHP" expanded="false" />
+            <element signature="e#2471#2820#0#PHP" expanded="false" />
+            <element signature="e#2954#4698#0#PHP" expanded="false" />
+            <element signature="e#3293#3320#1#PHP" expanded="true" />
+            <element signature="e#5117#5140#1#PHP" expanded="true" />
+            <element signature="e#6146#6194#0#PHP" expanded="true" />
+            <marker date="1473239407000" expanded="true" signature="3182:3412" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FitcheckerBundle/Resources/views/User/addConsumption.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
           <folding />
         </state>
       </provider>

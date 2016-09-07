@@ -185,4 +185,11 @@ class UserController extends Controller
             ]
         );
     }
+
+    public function addConsumptionAction($user_id)
+    {
+        return $this->render(
+            'FitcheckerBundle:User:addConsumption.html.twig'
+        );
+    }
 }

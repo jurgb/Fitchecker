@@ -24,6 +24,12 @@ fitchecker_user_addExerciseSet:
     requirements:
             user_id: '\d+'
 
+fitchecker_user_addConsumption:
+    path:     /user/{user_id}/addConsumption
+    defaults: { _controller: FitcheckerBundle:User:addConsumption}
+    requirements:
+            user_id: '\d+'
+
 fitchecker_exercise_index:
     path:     /exercises
     defaults: { _controller: FitcheckerBundle:Exercise:index}
