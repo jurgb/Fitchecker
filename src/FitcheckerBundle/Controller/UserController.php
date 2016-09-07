@@ -5,6 +5,7 @@ namespace FitcheckerBundle\Controller;
 use FitcheckerBundle\Entity\Consumption;
 use FitcheckerBundle\Entity\ExerciceSet;
 use FitcheckerBundle\Entity\Exercise;
+use FitcheckerBundle\Entity\Sleep;
 use FitcheckerBundle\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -188,6 +189,11 @@ class UserController extends Controller
         );
     }
 
+    /**
+     * @param $user_id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
     public function addConsumptionAction($user_id, Request $request)
     {
         //Make a new Consumption
@@ -218,6 +224,43 @@ class UserController extends Controller
             $consumption = $form->getData();
             $consumption->setUser($user);
             $em->persist($consumption);
+            $em->flush();
+
+            return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);
+        }
+
+        return $this->render(
+            'FitcheckerBundle:User:addConsumption.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    }
+
+    /**
+     * @param $user_id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function addSleepAction($user_id, Request $request)
+    {
+        //Make a new Sleep
+        $sleep = new Sleep();
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('FitcheckerBundle:User')->find($user_id);
+
+        $form = $this->createFormBuilder($sleep)
+            ->add('hours', IntegerType::class)
+            ->add('save', SubmitType::class, ['label' => 'add sleep'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $sleep = $form->getData();
+            $sleep->setUser($user);
+            $em->persist($sleep);
             $em->flush();
 
             return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);

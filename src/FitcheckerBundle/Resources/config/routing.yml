@@ -30,6 +30,12 @@ fitchecker_user_addConsumption:
     requirements:
             user_id: '\d+'
 
+fitchecker_user_addSleep:
+    path:     /user/{user_id}/addSleep
+    defaults: { _controller: FitcheckerBundle:User:addSleep}
+    requirements:
+            user_id: '\d+'
+
 fitchecker_exercise_index:
     path:     /exercises
     defaults: { _controller: FitcheckerBundle:Exercise:index}

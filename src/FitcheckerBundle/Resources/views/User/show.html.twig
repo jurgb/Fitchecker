@@ -38,10 +38,19 @@
     </div>
     <div>
         <h2>Consumptions</h2>
-        <a href="{{ path('fitchecker_user_addConsumption',{'user_id': user.id}) }}">New set</a>
+        <a href="{{ path('fitchecker_user_addConsumption',{'user_id': user.id}) }}">New consumption</a>
         {% for consumption in user.consumptions %}
             <div>
                 {{consumption.name}} consumed and it is {{consumption.type}}
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Sleep</h2>
+        <a href="{{ path('fitchecker_user_addSleep',{'user_id': user.id}) }}">New sleep</a>
+        {% for sleep in user.sleeps %}
+            <div>
+                {{sleep.hours}} hours of sleep
             </div>
         {% endfor %}
     </div>

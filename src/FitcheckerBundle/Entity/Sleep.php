@@ -2,7 +2,6 @@
 
 namespace FitcheckerBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,19 +11,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Sleep
 {
     /**
-     * @ORM\ManyToMany(targetEntity="User", inversedBy="sleeps")
-     * @var ArrayCollection|User[]
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="sleeps")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private $users;
-
-    /**
-     * Sleep constructor.
-     */
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
-
+    private $user;
     /**
      * @var int
      * @ORM\Column(name="id", type="integer", nullable=false)
@@ -32,12 +22,27 @@ class Sleep
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var int
+     * @ORM\Column(name="hours", type="integer", nullable=false)
      */
     private $hours;
 
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
 
     /**
      * Get id
@@ -47,6 +52,16 @@ class Sleep
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get hours
+     *
+     * @return int
+     */
+    public function getHours()
+    {
+        return $this->hours;
     }
 
     /**
@@ -61,15 +76,5 @@ class Sleep
         $this->hours = $hours;
 
         return $this;
-    }
-
-    /**
-     * Get hours
-     *
-     * @return int
-     */
-    public function getHours()
-    {
-        return $this->hours;
     }
 }

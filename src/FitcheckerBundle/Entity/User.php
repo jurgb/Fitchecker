@@ -23,14 +23,11 @@ class User
     private $exercises;
     /**
      * @ORM\OneToMany(targetEntity="Consumption", mappedBy="user")
+     * @var ArrayCollection|Consumption[]
      */
     private $consumptions;
     /**
-     * @ORM\ManyToMany(targetEntity="Sleep", mappedBy="users")
-     * @ORM\JoinTable(name="user_sleep",
-     *      joinColumns={@ORM\JoinColumn(name="sleep_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
-     *      ))
+     * @ORM\OneToMany(targetEntity="Sleep", mappedBy="user")
      * @var ArrayCollection|Sleep[]
      */
     private $sleeps;
