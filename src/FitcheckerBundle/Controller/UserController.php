@@ -2,11 +2,13 @@
 
 namespace FitcheckerBundle\Controller;
 
+use FitcheckerBundle\Entity\Consumption;
 use FitcheckerBundle\Entity\ExerciceSet;
 use FitcheckerBundle\Entity\Exercise;
 use FitcheckerBundle\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -186,10 +188,46 @@ class UserController extends Controller
         );
     }
 
-    public function addConsumptionAction($user_id)
+    public function addConsumptionAction($user_id, Request $request)
     {
+        //Make a new Consumption
+        $consumption = new Consumption();
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('FitcheckerBundle:User')->find($user_id);
+
+        $form = $this->createFormBuilder($consumption)
+            ->add('name', TextType::class)
+            ->add(
+                'type',
+                ChoiceType::class,
+                [
+                    'choices' => [
+                        'Healthy' => 'Healthy',
+                        'Unhealthy' => 'Unhealthy',
+                        'Inbetween' => 'Inbetween',
+                    ],
+                ]
+            )
+            ->add('save', SubmitType::class, ['label' => 'add consumption'])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $consumption = $form->getData();
+            $consumption->setUser($user);
+            $em->persist($consumption);
+            $em->flush();
+
+            return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);
+        }
+
         return $this->render(
-            'FitcheckerBundle:User:addConsumption.html.twig'
+            'FitcheckerBundle:User:addConsumption.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
         );
     }
 }

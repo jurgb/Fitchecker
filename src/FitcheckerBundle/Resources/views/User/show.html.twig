@@ -38,7 +38,12 @@
     </div>
     <div>
         <h2>Consumptions</h2>
-
+        <a href="{{ path('fitchecker_user_addConsumption',{'user_id': user.id}) }}">New set</a>
+        {% for consumption in user.consumptions %}
+            <div>
+                {{consumption.name}} consumed and it is {{consumption.type}}
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}
