@@ -44,3 +44,10 @@ fitchecker_exercise_add:
     path:     /exercise/add
     defaults: { _controller: FitcheckerBundle:Exercise:add}
 
+fitchecker_equipment_index:
+    path:     /equipments
+    defaults: { _controller: FitcheckerBundle:Equipment:index}
+
+fitchecker_equipment_add:
+    path:     /equipment/add
+    defaults: { _controller: FitcheckerBundle:Equipment:add}

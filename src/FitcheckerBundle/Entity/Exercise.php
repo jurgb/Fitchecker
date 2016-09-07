@@ -30,6 +30,7 @@ class Exercise
      *      joinColumns={@ORM\JoinColumn(name="exercise_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="equipment_id", referencedColumnName="id")}
      *      )
+     * @var ArrayCollection|Equipment[]
      */
     private $equipments;
     /**

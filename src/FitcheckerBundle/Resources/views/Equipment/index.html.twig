@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>All availaible exercises</h1>
+    <a href="{{ path('fitchecker_equipment_add') }}">Add new equipment</a>
+    {% for equipment in equipments %}
+        <div>
+            {{ equipment.name }}, located at: {{ equipment.location }}
+        </div>
+    {% endfor %}
+{%  endblock %}
