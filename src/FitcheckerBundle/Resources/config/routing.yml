@@ -40,6 +40,12 @@ fitchecker_user_addSleep:
     requirements:
             user_id: '\d+'
 
+fitchecker_user_getjson:
+    path:     /user/{user_id}/getjson
+    defaults: { _controller: FitcheckerBundle:User:getJson}
+    requirements:
+            user_id: '\d+'
+
 fitchecker_exercise_index:
     path:     /exercises
     defaults: { _controller: FitcheckerBundle:Exercise:index}

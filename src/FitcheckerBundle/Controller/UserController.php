@@ -15,6 +15,10 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * Class UserController
@@ -288,6 +292,30 @@ class UserController extends Controller
             [
                 'form' => $form->createView(),
             ]
+        );
+    }
+
+    /**
+     * @param $user_id
+     * @return Response
+     */
+    public function getJsonAction($user_id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('FitcheckerBundle:User')->find($user_id);
+
+        $encoder = new JsonEncoder();
+        $normalizer = new ObjectNormalizer();
+
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+
+        $serializer = new Serializer([$normalizer], [$encoder]);
+
+        $json = $serializer->serialize($user,'json');
+        return new Response(
+            '<html><body><div>user data: '.$json.'</div></body></html>'
         );
     }
 
