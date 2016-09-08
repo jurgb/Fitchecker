@@ -55,6 +55,21 @@ class UserController extends Controller
             $em->flush();
 
 
+            //Send an email to the new user
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Hello!')
+                ->setFrom('send@fitchecker.be')
+                ->setTo($user->getEmail())
+                ->setBody(
+                    $this->renderView(
+                    // app/Resources/views/Emails/registration.html.twig
+                        'Emails/registration.html.twig',
+                        ['name' => $user->getName()]
+                    ),
+                    'text/html'
+                );
+            $this->get('mailer')->send($message);
+
             return $this->redirectToRoute('fitchecker_user_show', ['user_id' => $user->getId()]);
         }
 
@@ -85,7 +100,7 @@ class UserController extends Controller
             [
                 // last username entered by the user
                 'last_username' => $lastUsername,
-                'error'         => $error,
+                'error' => $error,
             ]
         );
 
@@ -307,13 +322,16 @@ class UserController extends Controller
         $encoder = new JsonEncoder();
         $normalizer = new ObjectNormalizer();
 
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
+        $normalizer->setCircularReferenceHandler(
+            function ($object) {
+                return $object->getId();
+            }
+        );
 
         $serializer = new Serializer([$normalizer], [$encoder]);
 
-        $json = $serializer->serialize($user,'json');
+        $json = $serializer->serialize($user, 'json');
+
         return new Response(
             '<html><body><div>user data: '.$json.'</div></body></html>'
         );
