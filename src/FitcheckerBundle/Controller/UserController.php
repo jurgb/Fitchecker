@@ -7,12 +7,11 @@ use FitcheckerBundle\Entity\ExerciceSet;
 use FitcheckerBundle\Entity\Exercise;
 use FitcheckerBundle\Entity\Sleep;
 use FitcheckerBundle\Entity\User;
+use FitcheckerBundle\Form\UserType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,28 +28,21 @@ class UserController extends Controller
      */
     public function signupAction(Request $request)
     {
-        // create a user
+        // 1) build the form
         $user = new User();
-
-        $form = $this->createFormBuilder($user)
-            ->add('email', EmailType::class)
-            ->add('name', TextType::class)
-            ->add('firstname', TextType::class)
-            ->add('street', TextType::class)
-            ->add('streetNumber', TextType::class)
-            ->add('zipcode', TextType::class)
-            ->add('city', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('Age', IntegerType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create User'])
-            ->getForm();
-
+        $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // 3) Encode the password (you could also do this via Doctrine listener)
+            $password = $this->get('security.password_encoder')
+                ->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
+
             // $form->getData() holds the submitted values
             // but, the original `$task` variable has also been updated
-            $user = $form->getData();
+            //$user = $form->getData();
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
@@ -68,6 +60,31 @@ class UserController extends Controller
                 'form' => $form->createView(),
             ]
         );
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function loginAction(Request $request)
+    {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render(
+            'FitcheckerBundle:User:login.html.twig',
+            [
+                // last username entered by the user
+                'last_username' => $lastUsername,
+                'error'         => $error,
+            ]
+        );
+
     }
 
     /**
@@ -273,4 +290,6 @@ class UserController extends Controller
             ]
         );
     }
+
+
 }

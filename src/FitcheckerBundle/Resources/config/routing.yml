@@ -3,8 +3,12 @@ fitchecker_homepage:
     defaults: { _controller: FitcheckerBundle:Default:index }
 
 fitchecker_user_signup:
-    path:     /user/new
+    path:     /signup
     defaults: {_controller: FitcheckerBundle:User:signup}
+
+fitchecker_user_login:
+    path:     /login
+    defaults: { _controller: FitcheckerBundle:User:login}
 
 fitchecker_user_show:
     path:     /user/show/{user_id}
@@ -51,3 +55,7 @@ fitchecker_equipment_index:
 fitchecker_equipment_add:
     path:     /equipment/add
     defaults: { _controller: FitcheckerBundle:Equipment:add}
+
+fitchecker_admin:
+    path:     /admin
+    defaults: { _controller: FitcheckerBundle:Default:admin}

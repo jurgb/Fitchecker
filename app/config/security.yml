@@ -7,6 +7,12 @@ security:
         in_memory:
             memory: ~
 
+    providers:
+        our_db_provider:
+            entity:
+                class: FitcheckerBundle:User
+                property: username
+
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -17,8 +23,18 @@ security:
             anonymous: ~
             # activate different ways to authenticate
 
-            # http_basic: ~
+            #http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            form_login:
+                login_path: /login
+                check_path: /login
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/admin, roles: ROLE_ADMIN }
+    encoders:
+        FitcheckerBundle\Entity\User:
+            algorithm: bcrypt
