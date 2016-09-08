@@ -23,11 +23,12 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login
+            logout:
+                path:   /logout
+                target: /
 
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
     access_control:
-        # require ROLE_ADMIN for /admin*
+        - { path: ^/dashboard, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
     encoders:
         FitcheckerBundle\Entity\User:

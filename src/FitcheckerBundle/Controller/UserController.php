@@ -7,6 +7,8 @@ use FitcheckerBundle\Entity\ExerciceSet;
 use FitcheckerBundle\Entity\Exercise;
 use FitcheckerBundle\Entity\Sleep;
 use FitcheckerBundle\Entity\User;
+use FitcheckerBundle\Form\ChangePasswordType;
+use FitcheckerBundle\Form\Model\ChangePassword;
 use FitcheckerBundle\Form\UserType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -104,6 +106,58 @@ class UserController extends Controller
             ]
         );
 
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function changePasswordAction(Request $request)
+    {
+        $user = $this->getUser();
+
+        $changePasswordModel = new ChangePassword();
+        $form = $this->createForm(ChangePasswordType::class, $changePasswordModel);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $newpassword = $form['newPassword']->getData();
+            $user->setPlainpassword($newpassword);
+            // 3) Encode the password (you could also do this via Doctrine listener)
+            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($password);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            $this->addFlash(
+                'passwordchangesucces',
+                'Your password was changed successfully!'
+            );
+
+            return $this->redirectToRoute('fitchecker_user_dashboard');
+        }
+
+        return $this->render(
+            'FitcheckerBundle:User:changePassword.html.twig',
+            [
+                'form' => $form->createView(),
+                'user' => $user,
+            ]
+        );
+    }
+
+    /**
+     * @return Response
+     */
+    public function dashboardAction()
+    {
+        $user = $this->getUser();
+
+        return $this->render('FitcheckerBundle:User:dashboard.html.twig', ['user' => $user]);
     }
 
     /**

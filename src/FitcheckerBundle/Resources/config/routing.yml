@@ -10,6 +10,17 @@ fitchecker_user_login:
     path:     /login
     defaults: { _controller: FitcheckerBundle:User:login}
 
+fitchecker_user_logout:
+    path: /logout
+
+fitchecker_user_change_password:
+    path:     /profile/changepassword
+    defaults: { _controller: FitcheckerBundle:User:changepassword}
+
+fitchecker_user_dashboard:
+    path:     /dashboard
+    defaults: { _controller: FitcheckerBundle:User:dashboard}
+
 fitchecker_user_show:
     path:     /user/show/{user_id}
     defaults: { _controller: FitcheckerBundle:User:show}
