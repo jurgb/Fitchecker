@@ -1,0 +1,18 @@
+<nav style="display:flex;border-bottom: 2px solid #efefef;justify-content: space-between;align-items: center;">
+    <div>
+        <h1 style="font-size: 20px;"><a href="{{ path('fitchecker_homepage')}}">Fitchecker</a></h1>
+    </div>
+    <div>
+        <a href="{{ path('fitchecker_exercise_index')}}">Exercises</a>
+        <a href="{{ path('fitchecker_equipment_index')}}">Equipment</a>
+    </div>
+    <div>
+        {% if app.user %}
+            <a href="{{ path('fitchecker_user_dashboard')}}">Hello, {{ app.user.username }}</a>
+            <a href="{{ path('fitchecker_user_logout')}}">Logout</a>
+        {% else %}
+            <a href="{{ path('fitchecker_user_login')}}">Sign in</a>
+            <a href="{{ path('fitchecker_user_signup')}}">Sign up</a>
+        {% endif %}
+    </div>
+</nav>
